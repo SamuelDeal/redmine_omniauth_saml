@@ -26,6 +26,10 @@ class User
     change_password_allowed_without_omniauth_saml? && !created_by_omniauth_saml?
   end
 
-  alias_method_chain :change_password_allowed?, :omniauth_saml
+  def must_change_password_with_omniauth_saml?
+    return false
+  end
 
+  alias_method_chain :change_password_allowed?, :omniauth_saml
+  alias_method_chain :must_change_password?, :omniauth_saml
 end
