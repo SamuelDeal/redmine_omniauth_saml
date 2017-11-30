@@ -13,10 +13,10 @@ Redmine::OmniAuthSAML::Base.configure do |config|
     :name_identifier_value          => "mail", # Which redmine field is used as name_identifier_value for SAML logout
     :attribute_mapping              => {
     # How will we map attributes from SSO to redmine attributes
-      :login      => 'extra.raw_info.username',
-      :mail       => 'extra.raw_info.email',
-      :firstname  => 'extra.raw_info.firstname',
-      :lastname   => 'extra.raw_info.firstname'
+      :login      => 'extra#raw_info#username',
+      :mail       => 'extra#raw_info#email',
+      :firstname  => 'extra#raw_info#firstname',
+      :lastname   => 'extra#raw_info#lastname'
     }
   }
 
